@@ -3,15 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./static/style.css">
+    <!-- link de iconos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    
+    <link rel="stylesheet" href="./static/css/style.css">
     <title>Vet-Pet</title>
 </head>
 <body>
-    <header>
-        <nav>
-            Navbar
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Vet-Pet</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class='bx bx-home nav__icon'></i>
+                            <span class="nav__name">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#nosotros" class="nav__link">
+                            <i class='bx bx-group nav__icon'></i>
+                            <span class="nav__name">Nosotros</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#productos" class="nav__link">
+                            <i class='bx bx-cart nav__icon' ></i>
+                            <span class="nav__name">Productos</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#contacto" class="nav__link">
+                            <i class='bx bx-envelope nav__icon'></i>
+                            <span class="nav__name">Contacto</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <img src="./static/img/pet-house.png" alt="" class="nav__img">
         </nav>
     </header>
-    Vet-Pet
+    <main>
+        <!-- HOME -->
+        <section class="container section section__height" id="home">
+            <h2 class="section__title">Home</h2>
+        </section>
+
+        <!-- Nosotros -->
+        <section class="container section section__height" id="nosotros">
+            <h2 class="section__title">Nosotros</h2>
+        </section>
+
+        <!-- Productos -->
+        <section class="container section section__height" id="productos">
+            <h2 class="section__title">Productos</h2>
+        </section>
+
+        <!-- Contacto -->
+        <section class="container section section__height" id="contacto">
+            <h2 class="section__title">Contacto</h2>
+        </section>
+        
+    </main>
+
+
+    
+    <script src="./static/js/main.js"></script>
 </body>
 </html>
