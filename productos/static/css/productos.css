@@ -1,0 +1,22 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    
+}
+
+aside{
+
+    padding: 2rem;
+    position: sticky;
+    top: 0px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo{
+
+font-weight: 400;
+font-size: 1.3rem;
+}
