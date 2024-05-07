@@ -187,14 +187,6 @@ img{
 /*-/-------------------------------- QUERYS---------------------------------/ */
 
 
-/* CELULARES */
-/* @media screen and (max-width: 320px){
-    .nav__name{
-        display: none;
-    }
-} */
-
-
 /* PANTALLAS MEDIANAS */
 @media screen and (min-width: 576px){
     .nav__list{
@@ -205,6 +197,7 @@ img{
         font-size: var(--tiny-font-size);
         display: block;
     }
+
 }
 
 
@@ -241,6 +234,7 @@ img{
         background-color: var(--first-color);
         border-radius: 50%;
     }
+
 }
 /* PARA PANTALLAS EXTRA LARGAS */
 
@@ -315,7 +309,22 @@ form{
     font-family: var(--body-font);
 
 }
-
+/* ---------MANEJO DEL ERROR------- */
+/* DEJA UN BORDE ROJO SI HAY ERROR */
+.inputBox.error input,
+.inputBox.error textarea{
+border-bottom: 1px solid red;
+}
+/* DEJA UN BORDE AZUL EN EL INPUT SELECCIONADO (:FOCUS) */
+.inputBox:not(.error) input:focus,
+.inputBox:not(.error) textarea:focus{
+border-bottom: 1px solid var(--primary-color);
+}
+.inputBox .err-msg{
+    font-size: 10px;
+    color: red;
+}
+/* --------------------------------------- */
 .inputBox textarea{
     resize: none;
     height: 150px;
@@ -398,4 +407,42 @@ form{
     border-bottom-right-radius: 30px;
     color: var(--container-color);
     background-color: var(--primary-color);
+}
+.social-icons a{
+    text-decoration: none;
+    color: var(--container-color);
+}
+
+
+        /*---------------- QUERYS FORMS --------------*/
+
+/* CELULARES */
+@media screen and (max-width: 768px){
+    /* --------FORMULARIO----------- */
+
+    .container-form{
+        flex-direction: column;
+        gap: 40px;
+        padding: 20px;
+    }
+    .left,
+    .right{
+        width: 100%;
+    }
+    .contact-info{
+        margin-top: 40px;
+    }
+    .social-icons{
+        position: relative;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        max-width: 200px;
+        margin: auto;
+        padding: 18px 20px;
+        flex-direction: row;
+        justify-content: space-between;
+        border-radius: 5px;
+        
+    }
 }
