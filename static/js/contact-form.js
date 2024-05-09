@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('../template/contacto.html')
+    fetch('../templates/contacto.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('contacto').innerHTML = data;
