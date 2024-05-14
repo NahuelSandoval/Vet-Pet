@@ -64,6 +64,7 @@ img{
 /* CLASES DE CSS REUSABLES */
 .section{
     padding: 4.5rem 0 2rem;
+
 }
 .section__title{
     font-size: var(--h1-font-size);
@@ -344,7 +345,98 @@ border-bottom: 1px solid var(--first-color);
     background-color: var(--first-color-alt);
 }
 
+/* -----CHECKBOX--- */
+
+.checkBox input[type="radio"]{
+    display: none;
+}
+.checkBox p{
+    margin-bottom: 10px;
+}
+.checkBox label{
+    color: var(--secondary-color);
+    background-color: var(--first-color);
+    margin: 5px;
+    padding: 5px 15px 5px 51px;
+    display: inline-block;
+    position: relative;
+    border-radius: 3px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    
+}
+.checkBox label:hover{
+    background-color: var(--first-color-alt);
+}
+.checkBox label:before{
+    content: "";
+    width: 17px;
+    height: 17px;
+    display: inline-block;
+    background-color: none;
+    border: 3px solid var(--secondary-color);
+    border-radius: 3px;
+    position: absolute;
+    left: 17px;
+    top: 4px;
+}
+.checkBox input[type="radio"]:checked + label {
+    padding: 5px 15px;
+    background-color: var(--first-color-alt);
+    border-radius: 2px;
+    color: var(--secondary-color);
+}
+.checkBox input[type="radio"]:checked + label:before {
+    display: none;
+}
+
+/* -----SELECT--- */
+
+.select{
+    margin-top: 10px;
+    box-shadow: none;
+    background-color: var(--container-color);
+    position: relative;
+    display: flex;
+    width: 12em;
+    height: 3em;
+    line-height: 3;
+    appearance: none;
+    overflow: hidden;
+    border-radius: 5px;
+}
+select::-ms-expand{
+    display: none;
+}
+select{
+    
+    flex: 1;
+    padding: 0 0.5em;
+    cursor: pointer;
+    font-size: var(--normal-font-size);
+    font-family: var(--body-font);
+}
+.select::after{
+    content:  "\25BC";
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    cursor: pointer;
+    background-color: var(--first-color);
+    pointer-events: none;
+    transition: .25s all ease;
+}
+.select:hover::after{
+    color: var(--container-color);
+}
+
+
 /* ------LADO DERECHO---------- */
+
+
 
 .right{
     width: 45%;
@@ -442,5 +534,127 @@ border-bottom: 1px solid var(--first-color);
         justify-content: space-between;
         border-radius: 5px;
         
+    }
+}
+
+/* -------------------------SECCION NOSOTROS----------------- */
+
+.section-nos{
+    width: 100%;
+    padding: 40px 0 40px 0;
+    border-radius: 10px;
+    background-color: var(--container-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.section-nosotros{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px auto;
+}
+.section-nosotros h1{
+    margin-bottom: 25px;
+    position: relative;
+}
+.section-nosotros h1::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    display: block;
+    margin: 0 auto;
+    background-color: rgb(196, 211, 197);
+}
+.section-nosotros p{
+    margin-bottom: 35px;
+}
+.container-nosotros{
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+.about{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.about-img{
+    flex: 1;
+    margin-right: 40px;
+    overflow: hidden;
+}
+.about-img img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: 0.5s ease;
+}
+.about-img:hover img{
+    transform: scale(1.2);
+}
+.about-content{
+    flex: 1;
+}
+.about-content h1{
+    margin-bottom: 15px;
+}
+.about-content p{
+    line-height: 1.5;
+}
+.about-content .ir-contacto{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--first-color);
+    color: var(--container-color);
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 15px;
+    transition: 0.3s ease;
+}
+.about-content .ir-contacto:hover{
+    background-color: var(--first-color-alt);
+}
+/* -----------------QUERYS--------------- */
+
+@media screen and (max-width: 768px){
+    .heading{
+        padding: 0px 0px;
+    }
+    .heading h1{
+        font-size: 36px;
+    }
+    .heading p{
+        font-size: 17px;
+        margin-bottom: 0px;
+    }
+    .container-nosotros{
+        padding: 0px;
+    }
+    .about{
+        padding: 20px;
+        flex-direction: column;
+    }
+    .about-img{
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+    .about-content p{
+        padding: 0px;
+        font-size: 16px;
+    }
+    .about-content .ir-contacto{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 576px){
+    .about{
+        text-align: center;
+    }
+    .about p{
+        font-size: 14px;
     }
 }
