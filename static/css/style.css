@@ -245,6 +245,7 @@ img{
     }
 }
 
+
 /* ------------------------FORM---------------------- */
 
 .section-form{
@@ -656,5 +657,85 @@ select{
     }
     .about p{
         font-size: 14px;
+    }
+}
+
+/* ------------------HOME----------------- */
+/* ---------BANNER------ */
+.banner{
+    position: relative;
+    widows: 100%;
+    height: calc(100vh - 50px);
+    background-image: url(../img/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+}
+.capa{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(211, 238, 240, 0.75);
+}
+.contenido{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--first-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.contenido h1{
+    margin: 20px;
+    font-size: 30px;
+}
+.contenido p{
+    margin: 20px;
+    font-size: 20px;
+
+}
+.contenido .button{
+    text-decoration: none;
+    color: var(--container-color);
+    padding: 9px 20px;
+    text-transform: uppercase;
+    border: 1px solid var(--container-color);
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+    width: 150px;
+}
+.contenido .button:hover{
+    background-color: var(--container-color);
+    color: var(--first-color);
+}
+/* ----------QUERYS DEL HOME------ */
+@media screen and (max-width: 768px){
+    .banner{
+        height: calc(80vh - 50px);
+        background-size: contain;
+    }
+    .contenido h1{
+        font-size: var(--h1-font-size);
+    }
+    .contenido p{
+        font-size: var(--normal-font-size);
+    }
+    
+}
+@media screen and (max-width: 576px){
+    .banner{
+        height: calc(80vh - 50px);
+        background-size: contain;
+        background-position: top center;
+    }
+    .contenido{
+        padding-top: 55%;
     }
 }
