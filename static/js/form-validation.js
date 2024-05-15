@@ -16,6 +16,8 @@ const formValidation = () => {
         let name = form.querySelector(".name");
         let message = form.querySelector(".message");
         let email = form.querySelector(".email");
+        /* let options = form.querySelector("input[name='options']:checked") */
+        
     
         if (name.value === ""){
             giveError(name, "Ingrese su nombre");
@@ -26,12 +28,21 @@ const formValidation = () => {
             giveError(message, "Ingrese su consulta");
             valid = false;
         }
+
+
         //chequea que sea un formato valido de email
         let emailReject = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         let emailValue = email.value;
         if(!emailReject.test(emailValue)){
             giveError(email, "Ingrese un email válido")
         }
+        
+/*         if (options.value === ""){
+            giveError(options, "Ingrese una opción");
+            valid = false;
+        } */
+
+
         //SI ES VALIDO RETORNA TRUE
         if(valid){
             return true;
