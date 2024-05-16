@@ -208,6 +208,9 @@ img{
     }
     .section{
         padding: 7rem 0 2rem;
+        max-width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
     }
     .nav{
         height: calc(var(--header-height) + 1.5rem);
@@ -240,6 +243,7 @@ img{
 
 @media screen and (min-width: 1024px){
     .container{
+        max-width: 90vw;
         margin-left: auto;
         margin-right: auto;
     }
@@ -258,7 +262,7 @@ img{
 .container-form{
     position: relative;
     width: 100%;
-    max-width: 900px;
+    /* max-width: 900px; */
     padding: 40px;
     display: flex;
     gap: 80px;
@@ -486,7 +490,7 @@ select{
 
 .social-icons{
     position: absolute;
-    right: -50px;
+    right: 0px;
     bottom: 50px;
     width: 50px;
     display: flex;
@@ -495,7 +499,8 @@ select{
     padding: 25px;
     font-size: 25px;
     align-items: center;
-    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
     color: var(--container-color);
     background-color: var(--first-color);
 }
@@ -662,19 +667,22 @@ select{
 
 /* ------------------HOME----------------- */
 /* ---------BANNER------ */
+
+
+
 .banner{
     position: relative;
     widows: 100%;
     height: calc(100vh - 50px);
-    background-image: url(../img/background.jpg);
+    background-image: url(../img/background2.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100vw;
+    /* width: 100%; */
 }
 .capa{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -699,6 +707,7 @@ select{
 .contenido p{
     margin: 20px;
     font-size: 20px;
+    padding: 0px 20px 0px 20px;
 
 }
 .contenido .button{
@@ -716,18 +725,21 @@ select{
     color: var(--first-color);
 }
 /* ----------QUERYS DEL HOME------ */
+
 @media screen and (max-width: 768px){
-    .banner{
-        height: calc(80vh - 50px);
-        background-size: contain;
+/*     .capa{
+        height: 90vh;
     }
+    .banner{
+        height: calc(100vh - 80px);
+        background-size: contain;
+    } */
     .contenido h1{
         font-size: var(--h1-font-size);
     }
     .contenido p{
         font-size: var(--normal-font-size);
     }
-    
 }
 @media screen and (max-width: 576px){
     .banner{
@@ -736,6 +748,24 @@ select{
         background-position: top center;
     }
     .contenido{
-        padding-top: 55%;
+        justify-content: space-evenly
     }
+    .contenido h1{
+        margin-top: 10%;
+    }
+    .contenido p{
+        /* display: block; */
+        /* width: 100%; */
+        padding: 15px 0;
+        margin: 15% 0;
+        background: rgba(164, 230, 235, 0.75); 
+    }
+    .contenido .button{
+        background-color: var(--first-color);
+    }
+    .contenido .button:hover{
+        background-color: var(--first-color-alt);
+        color: var(--container-color);
+    }
+
 }
