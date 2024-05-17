@@ -23,3 +23,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 });
+
+/* PAGINA HOME */
+
+document.addEventListener("DOMContentLoaded", function() {
+    fetch('../templates/home.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('home').innerHTML = data;
+    });
+
+});

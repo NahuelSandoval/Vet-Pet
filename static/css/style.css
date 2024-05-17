@@ -31,8 +31,8 @@
 
 @media screen and (min-width:986px){
     :root{
-        --h1-font-size: 2.25rem;
-        --normal-font-size: 1rem;
+        --h1-font-size: 2.5rem;
+        --normal-font-size: 1.2rem;
     }
 }
 
@@ -208,6 +208,9 @@ img{
     }
     .section{
         padding: 7rem 0 2rem;
+        max-width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
     }
     .nav{
         height: calc(var(--header-height) + 1.5rem);
@@ -240,10 +243,12 @@ img{
 
 @media screen and (min-width: 1024px){
     .container{
+        max-width: 90vw;
         margin-left: auto;
         margin-right: auto;
     }
 }
+
 
 /* ------------------------FORM---------------------- */
 
@@ -257,7 +262,7 @@ img{
 .container-form{
     position: relative;
     width: 100%;
-    max-width: 900px;
+    /* max-width: 900px; */
     padding: 40px;
     display: flex;
     gap: 80px;
@@ -272,13 +277,13 @@ img{
     width: 55%;
 }
 .heading{
-    font-size: 25px;
+    font-size: var(--h1-font-size);
     font-weight: 600;
     line-height: 1;
     color: var(--first-color);
 }
 .text{
-    font-size: 14px;
+    font-size: var(--normal-font-size);
     color: var(--text-color);
     margin-top: 10px;
 }
@@ -293,7 +298,7 @@ form{
 .inputBox textarea{
     width: 100%;
     padding: 10px;
-    font-size: 10px;
+    font-size: var(--normal-font-size);
     border-radius: 5px;
     color: var(--text-color);
     border: none;
@@ -304,7 +309,7 @@ form{
 .inputBox textarea::placeholder{
     color: var(--text-color);
     opacity: 0.5;
-    font-size: 12px;
+    font-size: var(--normal-font-size);
     font-family: var(--body-font);
 
 }
@@ -320,7 +325,7 @@ border-bottom: 1px solid red;
 border-bottom: 1px solid var(--first-color);
 }
 .inputBox .err-msg{
-    font-size: 10px;
+    font-size: var(--normal-font-size);
     color: red;
 }
 /* --------------------------------------- */
@@ -332,7 +337,7 @@ border-bottom: 1px solid var(--first-color);
     width: 100%;
     display: inline-block;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: var(--normal-font-size);
     font-weight: 500;
     border: none;
     color: var(--container-color);
@@ -365,8 +370,8 @@ border-bottom: 1px solid var(--first-color);
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    
 }
+
 .checkBox label:hover{
     background-color: var(--first-color-alt);
 }
@@ -381,6 +386,12 @@ border-bottom: 1px solid var(--first-color);
     position: absolute;
     left: 17px;
     top: 4px;
+}
+@media screen and (min-width: 986px){
+    .checkBox label:before{
+        margin-top: 4px;
+    }
+    
 }
 .checkBox input[type="radio"]:checked + label {
     padding: 5px 15px;
@@ -411,7 +422,6 @@ select::-ms-expand{
     display: none;
 }
 select{
-    
     flex: 1;
     padding: 0 0.5em;
     cursor: pointer;
@@ -444,12 +454,21 @@ select{
 .ilustration{
     display: flex;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto;   
+    overflow: hidden;
+    flex: 1;
+    margin-top: 0px;
 }
 .ilustration img{
     width: 70%;
     margin: auto;
     margin-top: 30px;
+    display: block;
+    transition: 0.5s ease;
+    
+}
+.ilustration img:hover{
+    transform: scale(1.1);
 }
 .contact-info{
     display: flex;
@@ -465,7 +484,7 @@ select{
 .infoBox .form-icon{
     width: 40px;
     height: 40px;
-    font-size: 20px;
+    font-size: var(--normal-font-size);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -485,16 +504,17 @@ select{
 
 .social-icons{
     position: absolute;
-    right: -50px;
+    right: 0px;
     bottom: 50px;
     width: 50px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 25px;
-    font-size: 25px;
+    font-size: var(--h1-font-size);
     align-items: center;
-    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
     color: var(--container-color);
     background-color: var(--first-color);
 }
@@ -586,6 +606,7 @@ select{
     flex: 1;
     margin-right: 40px;
     overflow: hidden;
+    border-radius: 10px;
 }
 .about-img img{
     max-width: 100%;
@@ -625,10 +646,10 @@ select{
         padding: 0px 0px;
     }
     .heading h1{
-        font-size: 36px;
+        font-size: var(--h1-font-size);
     }
     .heading p{
-        font-size: 17px;
+        font-size: var(--normal-font-size);
         margin-bottom: 0px;
     }
     .container-nosotros{
@@ -656,5 +677,66 @@ select{
     }
     .about p{
         font-size: 14px;
+    }
+}
+
+/* ------------------HOME----------------- */
+/* ---------BANNER------ */
+
+.section-banner{
+    position: relative;
+    background: url(../img/background.jpg) no-repeat center;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+.banner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--first-color);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.banner h1{
+    margin: 0;
+    font-size: 50px;
+}
+.banner h1 span{
+    border: 6px solid var(--container-color);
+    padding: 6px 14px;
+    display: inline-block;
+    border-radius: 5px;
+}
+.cen{
+    margin: 20px;
+    display: block;
+    font-size: 26px;
+}
+.button{
+    color: var(--container-color);
+    padding: 10px 24px;
+    background-color: var(--first-color);
+    text-decoration: none;
+    border-radius: 12px;
+    transition: .6s;
+}
+.button:hover{
+    opacity: .6;
+}
+#nosotros{
+    padding-top: 64px;
+}
+@media screen and (max-width: 768px){
+    .section-banner{
+        height: 80vh;
+    }
+    .banner h1{
+        font-size: var(--h1-font-size);
+    }
+    .cen{
+        font-size: var(--normal-font-size);
     }
 }
