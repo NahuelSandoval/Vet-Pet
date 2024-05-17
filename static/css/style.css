@@ -31,8 +31,8 @@
 
 @media screen and (min-width:986px){
     :root{
-        --h1-font-size: 2.25rem;
-        --normal-font-size: 1rem;
+        --h1-font-size: 2.5rem;
+        --normal-font-size: 1.2rem;
     }
 }
 
@@ -277,13 +277,13 @@ img{
     width: 55%;
 }
 .heading{
-    font-size: 25px;
+    font-size: var(--h1-font-size);
     font-weight: 600;
     line-height: 1;
     color: var(--first-color);
 }
 .text{
-    font-size: 14px;
+    font-size: var(--normal-font-size);
     color: var(--text-color);
     margin-top: 10px;
 }
@@ -298,7 +298,7 @@ form{
 .inputBox textarea{
     width: 100%;
     padding: 10px;
-    font-size: 10px;
+    font-size: var(--normal-font-size);
     border-radius: 5px;
     color: var(--text-color);
     border: none;
@@ -309,7 +309,7 @@ form{
 .inputBox textarea::placeholder{
     color: var(--text-color);
     opacity: 0.5;
-    font-size: 12px;
+    font-size: var(--normal-font-size);
     font-family: var(--body-font);
 
 }
@@ -325,7 +325,7 @@ border-bottom: 1px solid red;
 border-bottom: 1px solid var(--first-color);
 }
 .inputBox .err-msg{
-    font-size: 10px;
+    font-size: var(--normal-font-size);
     color: red;
 }
 /* --------------------------------------- */
@@ -337,7 +337,7 @@ border-bottom: 1px solid var(--first-color);
     width: 100%;
     display: inline-block;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: var(--normal-font-size);
     font-weight: 500;
     border: none;
     color: var(--container-color);
@@ -370,8 +370,8 @@ border-bottom: 1px solid var(--first-color);
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    
 }
+
 .checkBox label:hover{
     background-color: var(--first-color-alt);
 }
@@ -386,6 +386,12 @@ border-bottom: 1px solid var(--first-color);
     position: absolute;
     left: 17px;
     top: 4px;
+}
+@media screen and (min-width: 986px){
+    .checkBox label:before{
+        margin-top: 4px;
+    }
+    
 }
 .checkBox input[type="radio"]:checked + label {
     padding: 5px 15px;
@@ -416,7 +422,6 @@ select::-ms-expand{
     display: none;
 }
 select{
-    
     flex: 1;
     padding: 0 0.5em;
     cursor: pointer;
@@ -449,12 +454,21 @@ select{
 .ilustration{
     display: flex;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto;   
+    overflow: hidden;
+    flex: 1;
+    margin-top: 0px;
 }
 .ilustration img{
     width: 70%;
     margin: auto;
     margin-top: 30px;
+    display: block;
+    transition: 0.5s ease;
+    
+}
+.ilustration img:hover{
+    transform: scale(1.1);
 }
 .contact-info{
     display: flex;
@@ -470,7 +484,7 @@ select{
 .infoBox .form-icon{
     width: 40px;
     height: 40px;
-    font-size: 20px;
+    font-size: var(--normal-font-size);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -497,7 +511,7 @@ select{
     flex-direction: column;
     gap: 10px;
     padding: 25px;
-    font-size: 25px;
+    font-size: var(--h1-font-size);
     align-items: center;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
@@ -592,6 +606,7 @@ select{
     flex: 1;
     margin-right: 40px;
     overflow: hidden;
+    border-radius: 10px;
 }
 .about-img img{
     max-width: 100%;
@@ -631,10 +646,10 @@ select{
         padding: 0px 0px;
     }
     .heading h1{
-        font-size: 36px;
+        font-size: var(--h1-font-size);
     }
     .heading p{
-        font-size: 17px;
+        font-size: var(--normal-font-size);
         margin-bottom: 0px;
     }
     .container-nosotros{
@@ -668,118 +683,60 @@ select{
 /* ------------------HOME----------------- */
 /* ---------BANNER------ */
 
-.secction-banner{
-    height: 100vh;
-}
-
-.banner{
+.section-banner{
     position: relative;
-    widows: 100%;
-    height: calc(0vh - 50px);
-    background-image: url(../img/background2.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url(../img/background.jpg) no-repeat center;
     background-size: cover;
-}
-.capa{
-    width: 100%;
     height: 100vh;
+    overflow: hidden;
+}
+.banner{
     position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(211, 238, 240, 0.75);
-}
-.contenido{
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    color: var(--first-color);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-}
-.contenido h1{
-    margin: 20px;
-    font-size: 30px;
-}
-.contenido p{
-    margin: 20px;
-    font-size: 18px;
-    padding: 0px 20px 0px 20px;
-
-}
-.contenido .button{
-    text-decoration: none;
-    color: var(--container-color);
-    padding: 9px 20px;
-    text-transform: uppercase;
-    border: 1px solid var(--container-color);
-    border-radius: 5px;
-    transition: all .3s ease-in-out;
-    width: 150px;
-}
-.contenido .button:hover{
-    background-color: var(--container-color);
     color: var(--first-color);
+    font-weight: 700;
+    text-transform: uppercase;
 }
-/* ----------QUERYS DEL HOME------ */
-
+.banner h1{
+    margin: 0;
+    font-size: 50px;
+}
+.banner h1 span{
+    border: 6px solid var(--container-color);
+    padding: 6px 14px;
+    display: inline-block;
+    border-radius: 5px;
+}
+.cen{
+    margin: 20px;
+    display: block;
+    font-size: 26px;
+}
+.button{
+    color: var(--container-color);
+    padding: 10px 24px;
+    background-color: var(--first-color);
+    text-decoration: none;
+    border-radius: 12px;
+    transition: .6s;
+}
+.button:hover{
+    opacity: .6;
+}
+#nosotros{
+    padding-top: 64px;
+}
 @media screen and (max-width: 768px){
-    .secction-banner{
-        height: auto;
+    .section-banner{
+        height: 80vh;
     }
-    .banner{
-        height: calc(50vh - 50px);
-        background-position: top center;
-    }
-    .contenido{
-        justify-content: flex-start;
-        margin-top: 20px;
-        padding-bottom: 15px;
-        
-    }
-    .contenido h1{
+    .banner h1{
         font-size: var(--h1-font-size);
-        margin-bottom: 10px;
     }
-    .contenido p{
-        margin: 20px 0px;
+    .cen{
         font-size: var(--normal-font-size);
-        
-    }
-    
-}
-@media screen and (max-width: 576px){
-    .banner{
-        height: calc(80vh - 50px);
-        background-size: contain;
-        background-position: top center;
-    }
-    .contenido{
-        justify-content: space-evenly
-    }
-    .contenido h1{
-        margin-top: -15px;
-    }
-    .contenido p{
-        padding: 10px;
-        margin: 5px 0;
-        background: rgba(164, 230, 235, 0.75); 
-    }
-    .contenido .button{
-        background-color: var(--first-color);
-        border: none;
-    }
-    .contenido .button:hover{
-        background-color: var(--first-color-alt);
-        color: var(--container-color);
-    }
-
-}@media screen and (max-width: 376px){
-    .contenido h1{
-        margin-top: 150px;
     }
 }
