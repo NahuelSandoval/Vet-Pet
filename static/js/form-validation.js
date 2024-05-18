@@ -7,8 +7,10 @@ const formValidation = () => {
         //No hacer nada si el formulario no esta validado
         if(!validateForm(form)) return;
         //Si el formulario esta validado, submit
-        alert("Enviado exitosamente");
+        openPopup();
+        //Abre el popup cuando se envian los datos
         document.querySelector("form").reset();
+        //Resetea el formulario cuando se envia
     });
     
     const validateForm = (form) =>{
@@ -92,4 +94,20 @@ const formValidation = () => {
             error.remove();
         }
     }
+
+
+    /* FUNCIONES PARA ABRIR Y CERRAR POPUP */
+    /* SE LLAMAN DESPUES DE LA VALIDACION */
+
+
+    let popup = document.getElementById("popup");
+    function openPopup(){
+        popup.classList.add("open-popup");
+        //cuando se valida el form, abre el popup
+    }
+    let boton = document.getElementById("btnPopup");
+    boton.addEventListener("click", function() {
+        popup.classList.remove("open-popup");
+        //cuando se aprieta el acptar cierra el popup
+    });
 }
