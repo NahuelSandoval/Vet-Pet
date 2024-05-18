@@ -46,7 +46,8 @@ const formValidation = () => {
         if (select.value === ""){
             giveError(form.querySelector(".select"), "Elija una opcion");
             valid = false;
-        } 
+        } else
+            giveError(form.querySelector(".select"), "");
 
 
         //SI ES VALIDO RETORNA TRUE
