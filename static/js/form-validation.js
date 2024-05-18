@@ -8,6 +8,7 @@ const formValidation = () => {
         if(!validateForm(form)) return;
         //Si el formulario esta validado, submit
         alert("Enviado exitosamente");
+        document.querySelector("form").reset();
     });
     
     const validateForm = (form) =>{
@@ -16,8 +17,8 @@ const formValidation = () => {
         let name = form.querySelector(".name");
         let message = form.querySelector(".message");
         let email = form.querySelector(".email");
-        /* let options = form.querySelector("input[name='options']:checked") */
-        
+        let options = form.querySelector("input[name='options']:checked")
+        let select = form.querySelector("#mascotaSelect");
     
         if (name.value === ""){
             giveError(name, "Ingrese su nombre");
@@ -29,18 +30,24 @@ const formValidation = () => {
             valid = false;
         }
 
-
         //chequea que sea un formato valido de email
         let emailReject = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         let emailValue = email.value;
         if(!emailReject.test(emailValue)){
             giveError(email, "Ingrese un email válido")
+            valid = false;
         }
         
-/*         if (options.value === ""){
-            giveError(options, "Ingrese una opción");
+        if (!options) {
+            giveError(form.querySelector("input[name='options']"), "Elija una opción");
             valid = false;
-        } */
+        }
+
+        if (select.value === ""){
+            giveError(form.querySelector(".select"), "Elija una opcion");
+            valid = false;
+        } else
+            giveError(form.querySelector(".select"), "");
 
 
         //SI ES VALIDO RETORNA TRUE
