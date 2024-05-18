@@ -802,3 +802,26 @@ select{
         width: 70px;
     }
 }
+
+
+.footer{
+    background-color: var(--first-color);
+    padding: 50px;
+    font-weight: 400;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+}
+.footer p{
+    color: var(--container-color);
+}
+.footer img{
+    width: 60px;
+    height: auto;
+}
+
+@media screen and (max-width: 767px){
+    .footer{
+        padding-bottom: 120px;
+    }
+}
