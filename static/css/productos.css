@@ -341,7 +341,10 @@ main{
     display: none;
 }
 
-
+.producto:hover{
+    transform: scale(1.05);
+    transition: all .3s ease-in-out;
+}
 
 
 .contenedor-productos >.producto > .producto-imagen {
@@ -354,7 +357,12 @@ main{
 @media screen and (min-width:908px) /* and (max-width: 1080px) */{
 
 /* LE BORRO EL MAX-WIDTH Y LE AGREGO WIDTH AL BOTON MENU */
-
+    .wrapper_derecho{
+        width: 70vw;
+    }
+    .producto-imagen {
+        width: 100%;
+    }
     .main_carrito {
         background-color: var(--clr-main);
         margin: 0 1rem;
