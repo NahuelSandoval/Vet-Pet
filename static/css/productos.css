@@ -25,7 +25,7 @@ aside{
     color: var(--tittle-color);
     text-align: center;
     /* margin-bottom: -3rem; */
-    margin-top: 5.5rem;
+    margin-top: 7.5rem;
     font-weight: 350px;
     /* font-size: 1.5rem; */
 }
@@ -360,7 +360,7 @@ main{
         margin: 0 1rem;
         border-radius: 2rem;
         padding: 1.5rem;
-        margin-left: -11.1rem;
+        margin-left: -10.1rem;
         position: relative;
         /* right: -15.5rem; */
         /* top: -63px; */
@@ -463,9 +463,7 @@ main{
         align-items: center;
     }
 
-
 }
-
 @media screen /* and (min-width: 320px)  */and (max-width: 767px){
 /* ----------------------------------SE BORRA LA MEDIDA MINIMA----------------------------------------------------------- */
 /* -----------------------LE DOY UN WIDTH DE 80% AL CONTENEDOR CARRITO EN PANTALLAS CHICAS------------------------------- */
