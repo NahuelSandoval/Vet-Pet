@@ -25,9 +25,9 @@ aside{
     color: var(--tittle-color);
     text-align: center;
     /* margin-bottom: -3rem; */
-    margin-top: 6rem;
+    margin-top: 4.5rem;
     font-weight: 350px;
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
 }
 
 .menu{
@@ -53,8 +53,12 @@ aside{
     gap: 1rem;
     font-weight: 600;
     padding: 0.4rem;
-    font-size: 0.95rem;
-    width: 112%;
+    font-size: 1rem;
+    width: 112%; 
+    align-content: center;
+    /*justify-content: flex-start;
+    margin-left: 15rem;
+    text-decoration-line: var(--clr-main);*/
 }
 
 .boton-menu.active{
@@ -182,6 +186,7 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    /* width: 100vw;--------------------------------------------------------------------------------------------- */
 }
 
 .aside_servicios{
@@ -346,9 +351,9 @@ main{
 
 /**** Medias QUERIES ******/
 
-@media screen and (min-width:908px) and (max-width: 1080px){
+@media screen and (min-width:908px) /* and (max-width: 1080px) */{
 
-   
+/* LE BORRO EL MAX-WIDTH Y LE AGREGO WIDTH AL BOTON MENU */
 
     .main_carrito {
         background-color: var(--clr-main);
@@ -386,6 +391,10 @@ main{
         justify-content: space-evenly;
         margin-top: 2rem;
     }
+    .boton-menu{
+        width: 500px;
+    }
+    /* SINO SE GENERABA UN ESPACIO ENTRE EL BOTON Y LA LISTA COMPRADA */
 
     
 }
@@ -457,7 +466,13 @@ main{
 
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px){
+@media screen /* and (min-width: 320px)  */and (max-width: 767px){
+/* ----------------------------------SE BORRA LA MEDIDA MINIMA----------------------------------------------------------- */
+/* -----------------------LE DOY UN WIDTH DE 80% AL CONTENEDOR CARRITO EN PANTALLAS CHICAS------------------------------- */
+
+    .contenedor-carrito-compras{
+        width: 80%;
+    }
 
     .wrapper  {
 
@@ -507,6 +522,7 @@ main{
         flex-direction: column;
         justify-content: space-evenly;
         margin-top: 0rem;
+        width: 100%;
     }
 
     .aside-visible{
@@ -526,6 +542,7 @@ main{
         flex-direction: column;
         justify-content: space-evenly;
         margin-top: -2rem;
+        width: 100vw;
     }
 
     .contenedor-productos{
@@ -566,7 +583,7 @@ main{
     .boton-menu.active{
         width: 127%;
         height: 45px;
-        background-color: var(--clr-main_alt);
+        /*background-color: var(--clr-main_alt);*/
     }
 
     
@@ -670,6 +687,7 @@ main{
     .carrito-acciones-total > p{
 
         font-size: var(--p-font-size) ;
+
     }
 
 
@@ -687,8 +705,23 @@ main{
         margin-top: 5.2rem;
         width: 68%;
     }
-
+    .carrito-acciones-derecha{
+        flex-direction: column;
+    }
+    .carrito-acciones-total{
+        border-radius: 20px;
+        margin-bottom: 15px;
+    }
+    .carrito-acciones-comprar{
+        border-radius: 20px;
+    }
 }
+@media screen and(max-width: 396px) {
+    .carrito-acciones-derecha{
+        flex-direction: column;
+    }
+}
+
 /*
 @media screen and(min-width: 320px) {
     .header-medias_queries, .header-medias_queries-carrito .logo{
@@ -757,5 +790,4 @@ main{
 
     
 }*/
-
 
