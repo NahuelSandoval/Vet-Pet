@@ -32,5 +32,4 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(data => {
             document.getElementById('home').innerHTML = data;
     });
-
 });
